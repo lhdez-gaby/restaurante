@@ -75,11 +75,11 @@ const Header = () => {
 
           <div className='d-flex flex-row align-items-center'>
               <div >
-                <Link to='/'>
-                  <i className="bi bi-person-circle me-1"></i>
+                <Link to='/' >
+                  <i className="bi bi-person-circle me-1 user-icon"></i>
                 </Link>
               </div>
-              <Link to='Login'>
+              <Link to='Login' className='btn btn-primary'>
                     Iniciar sesión
               </Link>
               <span className='menu-icon ms-1' onClick={toggleMenu}>
