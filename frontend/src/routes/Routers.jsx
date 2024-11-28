@@ -1,6 +1,6 @@
 import Home from '../pages/Home'
 import Menu from '../pages/Menu'
-import Login from '../pages/Login'
+import Login from '../pages/Login/Login'
 import Registro from '../pages/Registro'
 import Contacto from '../pages/Contacto'
 import Servicios from '../pages/Servicios/Servicios'
