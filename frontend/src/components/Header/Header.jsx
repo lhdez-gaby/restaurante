@@ -26,29 +26,31 @@ const Header = () => {
   const headerRef = useRef(null)
   const menuRef = useRef(null)
 
-  const handleStickyHeader = () =>{
-    window.addEventListener('scroll', ()=>{
-      if(document.bodyscrollTop > 80 || document.documentElement.scrollTop > 80){
-        headerRef.currentclassList.add('sticky-header')
-      }else{
-        headerRef.currentclassList.remove('sticky-header')
+  const handleStickyHeader = () => {
+    if (headerRef.current) {
+      if (document.documentElement.scrollTop > 80) {
+        headerRef.current.classList.add('sticky-header');
+      } else {
+        headerRef.current.classList.remove('sticky-header');
       }
-    })
-  }
+    }
+  };
 
-  useEffect(()=>{
-    handleStickyHeader();
+  useEffect(() => {
+    const handleScroll = () => handleStickyHeader();
+    window.addEventListener('scroll', handleScroll);
+
     return () => {
-      window.removeEventListener('scroll', handleStickyHeader);
+      window.removeEventListener('scroll', handleScroll);
     };
-  },[])
+  }, []);
 
   const toggleMenu = () =>{
     menuRef.current.classList.toggle('show-menu')
   }
 
   return (
-    <header className='d-flex align-items-center mt-3' ref={headerRef}>
+    <header className='header d-flex align-items-center mt-3' ref={headerRef}>
       <div className="container">
         <div className="d-flex justify-content-between align-items-center flex-row">
           <div className='d-flex flex-row align-items-center gap-0'>
