@@ -1,4 +1,3 @@
-import './Home.css'
 import heroslider1 from '../assets/imagenes/hero-slider-1.jpg'
 import heroslider2 from '../assets/imagenes/hero-slider-2.jpg'
 import heroslider3 from '../assets/imagenes/hero-slider-3.jpg'

@@ -38,14 +38,14 @@ export const menu = [
     menu_id: 5,
     imagen: platilloImg05,
     nombre: 'Olivas Rellenas',
-    Precio: 1,
+    Precio: 90.00,
     ingredientes: 'Aguacates con carne de cangrejo, cebolla morada, ensalada de cangrejo, pimiento rojo relleno y pimiento verde'
   },
   {
     menu_id: 6,
     imagen: platilloImg06,
     nombre: 'Salmón',
-    Precio: 1,
+    Precio: 155.00,
     ingredientes: 'Verduras, quesos, salmón, salsa de tomate, condimentos y especias'
   }
 ]
