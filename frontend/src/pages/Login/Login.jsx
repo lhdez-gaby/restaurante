@@ -19,8 +19,9 @@ const Login = () => {
 
   }
   return (
-    <section className="container">
-      <div className="login shadow p-3 mb-5 rounded">
+    <section className="bg-naranja">
+      <div className="container p-3">
+      <div className="login shadow p-3 mb-5 rounded bg-light">
         <h3 className='texto-naranja'>¡Bienvenido!</h3>
         <form className='py-3'>
           <div className='mb-3 input-grup'>
@@ -43,9 +44,10 @@ const Login = () => {
         <p className='text-secondary text-center'>
           ¿Aún no tienes una cuenta?
           <Link className="ms-1" to='/registro'>
-            Registrate
+            Registrarse
           </Link>
         </p>
+      </div>
       </div>
     </section>
   )
