@@ -1,0 +1,1 @@
+export const BASE_URL = 'http://localhost/app_restaurante/api/'

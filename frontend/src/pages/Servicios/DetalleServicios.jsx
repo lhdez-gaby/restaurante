@@ -1,6 +1,7 @@
 import { servicios } from "../../assets/data/servicios"
 import { useParams, Link } from "react-router-dom"
 import Opiniones from "./Opiniones"
+import servicioimg from '../../assets/imagenes/servicios-3.png'
 
 const DetalleServicios = () => {
   const { id } = useParams()
@@ -10,7 +11,7 @@ const DetalleServicios = () => {
       <div className="card mb-3" >
         <div className="row g-0">
           <div className="col-md-3">
-            <img src={servicio.imagen} className="img-fluid rounded-start" alt="..." />
+            <img src={servicioimg} className="img-fluid rounded-start" alt="..." />
           </div>
           <div className="col-md-9">
             <div className="card-body">
