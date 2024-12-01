@@ -1,7 +1,7 @@
 import logo from '../../assets/imagenes/logo.jpg'
 import './Header.css'
 import { NavLink, Link} from 'react-router-dom'
-import { useEffect, useRef, useContext, useState } from 'react'
+import { useEffect, useRef, useContext} from 'react'
 import { authContext } from '../../context/AuthContext'
 
 const navLinks = [
@@ -80,7 +80,7 @@ const Header = () => {
             {
               rol && email ?
               <div >
-                <Link to={`${rol === 'cliente' ? '/clientes/profile/me':'/'}`} className='d-flex flex-column align-items-center' >
+                <Link to={`${rol === 'cliente' ? '/clientes/profile/me':'/dashboard'}`} className='d-flex flex-column align-items-center' >
                   <i className="bi bi-person-circle me-1 user-icon"></i>
                   <small>{email}</small>
                 </Link>
@@ -90,10 +90,6 @@ const Header = () => {
                   Iniciar sesión
               </Link>
             }
-              
-
-
-             
               <span className='menu-icon ms-1' onClick={toggleMenu}>
                 <i className="bi bi-list"></i>
               </span>

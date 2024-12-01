@@ -6,6 +6,9 @@ import Contacto from '../pages/Contacto/Contacto'
 import Servicios from '../pages/Servicios/Servicios'
 import DetalleServicios from '../pages/Servicios/DetalleServicios'
 import { Routes, Route } from 'react-router-dom'
+import ClientAccount from '../dashboard/clientAccount/ClientAccount'
+import Dashboard from '../dashboard/adminAccount/Dashboard'
+import ProtectedRoute from './ProtectedRoute'
 
 const Routers = () => {
   return (
@@ -18,6 +21,8 @@ const Routers = () => {
       <Route path="/registro" element={<Registro />} />
       <Route path="/contacto" element={<Contacto />} />
       <Route path="/menu" element={<Menu />} />
+      <Route path="/clientes/profile/me" element={ <ProtectedRoute allowedRoles={'cliente'}><ClientAccount /></ProtectedRoute> } />
+      <Route path="/dashboard" element={ <ProtectedRoute allowedRoles={'admin'}><Dashboard /></ProtectedRoute> } />
     </Routes>
   )
 }
