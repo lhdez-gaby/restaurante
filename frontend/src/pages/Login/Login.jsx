@@ -40,11 +40,13 @@ const Login = () => {
         body: JSON.stringify(formData),
       });
 
-      const {results} = await res.json() 
+      let {results} = await res.json() 
       
       if(!res.ok){
         throw new Error(results.comment)
       }
+
+      results = results[0]
 
       dispatch({
         type: "LOGIN_SUCCESS",
@@ -56,8 +58,6 @@ const Login = () => {
         rol:  results.rol
         }
       })
-
-      console.log(results)
       
       toast.success('Inicio de sesión exitosa')
       setLoading(false)
@@ -88,8 +88,7 @@ const Login = () => {
             type='submit'
             className='btn btn-primary'
           >
-             {loading ? <HashLoader size={35} color="#ffffff"/>: 'Iniciar sesión'}
-            
+             {loading ? <HashLoader size={35} color="#ffffff"/>: 'Iniciar sesión'}  
         </button>
           </div>
         </form>
