@@ -1,12 +1,13 @@
 import {createContext, useEffect, useReducer } from "react";
 
 const initialState = {
-  usuario_id: localStorage.getItem('usuario_id') || null,
-  nombre:  localStorage.getItem('nombre') || null,
-  celular:  localStorage.getItem('celular') || null,
-  email:  localStorage.getItem('email') || null,
-  rol:  localStorage.getItem('rol') || null
-}
+  usuario_id: localStorage.getItem('usuario_id') !== 'null' ? localStorage.getItem('usuario_id') : null,
+  nombre: localStorage.getItem('nombre') !== 'null' ? localStorage.getItem('nombre') : null,
+  celular: localStorage.getItem('celular') !== 'null' ? localStorage.getItem('celular') : null,
+  email: localStorage.getItem('email') !== 'null' ? localStorage.getItem('email') : null,
+  rol: localStorage.getItem('rol') !== 'null' ? localStorage.getItem('rol') : null,
+};
+
 
 export const authContext = createContext(initialState);
 
@@ -31,6 +32,12 @@ const authReducer = (state,action)=>{
       }
 
       case 'LOGOUT':
+        localStorage.removeItem('usuario_id')
+        localStorage.removeItem('nombre')
+        localStorage.removeItem('celular')
+        localStorage.removeItem('email')
+        localStorage.removeItem('rol')
+
         return{
           usuario_id: null,
           nombre:  null,

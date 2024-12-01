@@ -1,8 +1,8 @@
 import logo from '../../assets/imagenes/logo.jpg'
 import './Header.css'
 import { NavLink, Link} from 'react-router-dom'
-import { useEffect, useRef, useContext} from 'react'
-import { authContext } from '../../context/AuthContext'
+import { useContext, useEffect, useRef} from 'react'
+import { authContext } from '../../context/AuthContext' 
 
 const navLinks = [
   {
@@ -26,7 +26,7 @@ const navLinks = [
 const Header = () => {
   const headerRef = useRef(null)
   const menuRef = useRef(null)
-  const {email,rol} = useContext(authContext)
+  const {email,rol, dispatch} = useContext(authContext)
   
   const handleStickyHeader = () => {
     if (headerRef.current) {
@@ -37,6 +37,10 @@ const Header = () => {
       }
     }
   };
+
+  const handleLogout = () => {
+    dispatch({type: 'LOGOUT'})
+  }
 
   useEffect(() => {
     const handleScroll = () => handleStickyHeader();
@@ -79,14 +83,14 @@ const Header = () => {
 
             {
               rol && email ?
-              <div >
+              <div className='d-flex flex-row align-items-center'>
                 <Link to={`${rol === 'cliente' ? '/clientes/profile/me':'/dashboard'}`} className='d-flex flex-column align-items-center' >
                   <i className="bi bi-person-circle me-1 user-icon"></i>
-                  <small>{email}</small>
+                  <small>{rol === 'cliente' ? 'Perfil' : 'Dashboard'}</small>
                 </Link>
-                
+                <button className='btn btn-primary ms-1 btn-sm' onClick={handleLogout}>Cerrar sesión</button>
               </div> :
-               <Link to='Login' className='btn btn-primary'>
+               <Link to='Login' className='btn btn-primary btn-sm'>
                   Iniciar sesión
               </Link>
             }

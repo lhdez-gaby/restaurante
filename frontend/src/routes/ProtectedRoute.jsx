@@ -7,9 +7,6 @@ const ProtectedRoute = ({children, allowedRoles}) => {
 
   const isAllowed = allowedRoles.includes(rol)
   const accesibleRoute = email && isAllowed ? children : <Navigate to='/login' replace={true}/>
-
-
-
   return accesibleRoute
 }
 
