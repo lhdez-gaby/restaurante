@@ -3,12 +3,11 @@ import { authContext } from '../../context/AuthContext'
 import { useContext, useState } from 'react'
 import Perfil from './Perfil'
 import Reservaciones from './Reservaciones'
-import Opiniones from './Opiniones'
+
 
 const ClientAccount = () => {
-  const {nombre, email, celular } =useContext(authContext)
-  const [tab,setTab] = useState('perfil')
-
+  const {nombre, email, celular } = useContext(authContext)
+  const [tab,setTab] = useState('reservaciones')
   return(
     <div className="container">
     <div className="row">
@@ -22,9 +21,9 @@ const ClientAccount = () => {
           <p className='text-secondary'>{celular}</p>
         </div>
         <div>
-          <button className='btn text-primary' onClick={()=>setTab('perfil')}>Configurar perfil</button>
           <button className='btn text-primary 'onClick={()=>setTab('reservaciones')}>Reservaciones</button>
-          <button className='btn text-primary'onClick={()=>setTab('opiniones')}>Opiniones</button>
+         
+          <button className='btn text-primary' onClick={()=>setTab('perfil')}>Configurar perfil</button>
         </div>
       </div>
       <div className='col'>
@@ -33,9 +32,6 @@ const ClientAccount = () => {
         }
         {
           tab === 'reservaciones' && <Reservaciones/>
-        }
-        {
-          tab === 'opiniones' && <Opiniones/>
         }
       </div>
     </div>

@@ -6,6 +6,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
 import { AuthContextProvider } from './context/AuthContext.jsx';
+import "react-datepicker/dist/react-datepicker.css";
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
