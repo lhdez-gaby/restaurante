@@ -19,7 +19,7 @@ const DetalleServicios = () => {
               <p className="card-text">{servicio.descripcion}</p>
               <p className="card-text">Duración {servicio.duracion} hora{servicio.duracion == 1 ? '' : 's'}</p>
               <p className="card-text"><small className="text-body-secondary">${servicio.costo} por persona.</small></p>
-              <Link to="#" className="btn btn-primary">
+              <Link to="/clientes/profile/me" className="btn btn-primary">
                 Reservar mesa
               </Link>
             </div>

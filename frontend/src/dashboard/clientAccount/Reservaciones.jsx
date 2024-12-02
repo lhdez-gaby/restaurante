@@ -60,16 +60,16 @@ const Reservaciones = () => {
                       <div className='mb-3 input-grup'>
                         <select className="form-select" id="inputGroupSelect01" value="">
                           <option selected>Escoge un servicio...</option>
-                          {servicios.map((servicio)=>(
+                          {servicios.map((servicio) => (
                             <option key={servicio.id} value={servicio.id}>{servicio.nombre}</option>
-                        
+
                           ))}
                         </select>
                       </div>
                       <div className='mb-3 input-grup'>
                         <select className="form-select" id="inputGroupSelect02" value="">
                           <option selected>Escoge una mesa...</option>
-                          {mesas.map((mesa)=>(
+                          {mesas.map((mesa) => (
                             <option key={mesa.id} value={mesa.id}>{mesa.numero}</option>
                           ))}
                         </select>
@@ -81,25 +81,25 @@ const Reservaciones = () => {
                       <div className='mb-3 input-grup d-flex flex-row'>
                         <select className="form-select" id="inputGroupSelect03" value="">
                           <option selected>Escoge una hora...</option>
-                          <option  value='10'>10</option>
-                          <option  value='11'>11</option>
-                          <option  value='12'>12</option>
-                          <option  value='13'>13</option>
-                          <option  value='14'>14</option>
-                          <option  value='15'>15</option>
-                          <option  value='16'>16</option>
-                          <option  value='17'>17</option>
-                          <option  value='18'>18</option>
-                          <option  value='19'>19</option>
-                          <option  value='20'>20</option>
-                          <option  value='21'>21</option>
-                          <option  value='22'>22</option>
+                          <option value='10'>10</option>
+                          <option value='11'>11</option>
+                          <option value='12'>12</option>
+                          <option value='13'>13</option>
+                          <option value='14'>14</option>
+                          <option value='15'>15</option>
+                          <option value='16'>16</option>
+                          <option value='17'>17</option>
+                          <option value='18'>18</option>
+                          <option value='19'>19</option>
+                          <option value='20'>20</option>
+                          <option value='21'>21</option>
+                          <option value='22'>22</option>
                         </select>
                         <span>:</span>
                         <select className="form-select" id="inputGroupSelect04" value="">
-                        <option selected>Escoge los minutos...</option>
-                          <option  value='0'>00</option>
-                          <option  value='30'>30</option>
+                          <option selected>Escoge los minutos...</option>
+                          <option value='0'>00</option>
+                          <option value='30'>30</option>
                         </select>
                       </div>
                     </form>
@@ -129,12 +129,26 @@ const Reservaciones = () => {
                             <p>Mesa : {reservation.numeroMesa}</p>
                             <p>Empieza : {reservation.hora_inicio}</p>
                             <p>Termina : {reservation.hora_fin}</p>
+                            <p>Estado : {reservation.estado}</p>
                           </div>
                           <div>
-                            <button className="btn btn-danger d-flex mx-auto mt-1" >
-                              <i className="bi bi bi-x"></i>
-                              <p>Cancelar</p>
-                            </button>
+                            {
+                              reservation.estado == "reservada" ?
+
+                                <button className="btn btn-danger d-flex mx-auto mt-1" >
+                                  <i className="bi bi bi-x"></i>
+                                  <p>Cancelar</p>
+                                </button> :
+                                
+                                  reservation.estado == "completada" && (
+                                    <button className="btn btn-primary d-flex mx-auto mt-1" >
+                                      <i className="bi bi bi-pencil-square me-1"></i>
+                                      <p>Dejar opinión</p>
+                                    </button>
+                                  )
+                                
+                            }
+
                           </div>
 
                         </div>

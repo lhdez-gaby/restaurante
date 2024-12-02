@@ -54,6 +54,8 @@ const Reservaciones = () => {
                             <p>Mesa : {reservation.numeroMesa}</p>
                             <p>Empieza : {reservation.hora_inicio}</p>
                             <p>Termina : {reservation.hora_fin}</p>
+                            <p>Estado : {reservation.estado}</p>
+                            
                           </div>
                           <div className="d-flex">
                           <button className="btn btn-primary d-flex mx-auto mt-1" >

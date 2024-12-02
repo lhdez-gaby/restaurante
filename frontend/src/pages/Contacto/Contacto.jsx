@@ -30,6 +30,13 @@ const Contacto = () => {
           <p>222 23 23 156</p>
           </div> 
         </div>
+        <div className="d-flex flex-row ">
+        <i className="bi bi-calendar-week me-2 texto-naranja"></i>
+          <div>
+          <h6>Horario</h6>
+          <p>Todos los días de 10:00 a 22:00 horas</p>
+          </div> 
+        </div>
       </section>
 
     </div>
