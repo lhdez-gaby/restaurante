@@ -120,7 +120,7 @@ const Reservaciones = () => {
                 <p className="text-center mt-5">No tienes reservaciones</p> :
                 <div className="row my-3 mx-2">
                   {filteredReservetions.map((reservation) => (
-                    <div key={reservation.reservacion_id}>
+                    <div className="col m-1" key={reservation.reservacion_id}>
                       <div className="card" style={{ width: "15rem" }} >
                         <div className="card-body">
                           <h5 className="card-title">{reservation.nombreServicio}</h5>
